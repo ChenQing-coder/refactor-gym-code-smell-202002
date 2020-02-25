@@ -9,6 +9,6 @@ public class Laboratory {
         } else if (image.getMinDuration() >= 60.0) {
             return "Normal";
         }
-        return "easy";
+        return "easy";//依恋情结，实验类频繁调用镜像类的数据
     }
 }
