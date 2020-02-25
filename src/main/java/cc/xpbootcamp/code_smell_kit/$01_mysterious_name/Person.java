@@ -1,6 +1,7 @@
 package cc.xpbootcamp.code_smell_kit.$01_mysterious_name;
 
 public class Person {
+    //mysterious name
     private String n;
     private int number;
 

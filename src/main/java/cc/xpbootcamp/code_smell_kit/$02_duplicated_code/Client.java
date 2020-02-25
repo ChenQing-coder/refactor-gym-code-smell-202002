@@ -10,6 +10,7 @@ public class Client {
         products.add(productItem);
     }
 
+    // chooseProductAboveSpecifiedPrice and chooseProductBelowSpecifiedPrice have the same code.
     public ArrayList chooseProductAboveSpecifiedPrice(double price) {
         ArrayList tempList = new ArrayList();
         for (int i = 0; i < products.size(); i++) {
