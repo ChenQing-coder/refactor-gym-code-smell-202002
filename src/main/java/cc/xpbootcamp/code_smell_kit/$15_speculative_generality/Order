@@ -1,0 +1,18 @@
+public class Order {
+    private final double taxPercent = 0.1;
+    private final double discount = 0.98;
+    private OrderDate orderDate;
+    private List<LineItem> lineItemList;
+    private Customer customer;
+
+    public Order(OrderDate orderDate, List<LineItem> lineItemList) {
+        this.orderDate = orderDate;
+        this.lineItemList = lineItemList;
+    }
+
+    public Order(OrderDate orderDate, List<LineItem> lineItemList, Customer customer) {
+        this.orderDate = orderDate;
+        this.lineItemList = lineItemList;
+        this.customer = customer;
+    }
+}
