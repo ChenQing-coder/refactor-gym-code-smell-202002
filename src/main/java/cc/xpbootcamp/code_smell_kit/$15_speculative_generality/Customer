@@ -1,4 +1,5 @@
 
+//多余的类
 public class Customer {
     String cName;
     String addr;

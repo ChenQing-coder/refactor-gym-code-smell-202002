@@ -10,6 +10,7 @@ public class Order {
         this.lineItemList = lineItemList;
     }
 
+    // 多余的构造函数
     public Order(OrderDate orderDate, List<LineItem> lineItemList, Customer customer) {
         this.orderDate = orderDate;
         this.lineItemList = lineItemList;

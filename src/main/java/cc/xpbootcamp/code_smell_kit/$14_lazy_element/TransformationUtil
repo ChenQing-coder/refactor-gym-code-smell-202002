@@ -1,0 +1,7 @@
+//Python代码
+
+//这个类冗赘，只有一个方法
+class TransformationUtil:
+    @staticmethod
+    def trans_to_dict(key, list_contains_key):
+        return dict((getattr(val, key), val) for val in list_contains_key if val and getattr(val, key))
