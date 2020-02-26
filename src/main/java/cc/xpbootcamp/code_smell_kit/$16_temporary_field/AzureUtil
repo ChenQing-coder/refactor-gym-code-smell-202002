@@ -1,0 +1,25 @@
+
+class AzureBlobUtil:
+    @staticmethod
+    def get_blob_share_url_with_expiry(container_name, file_name, expiry_in_seconds=1800):
+
+        //临时变量
+        blob_account_name = CONFIG_DICT['BLOB_ACCOUNT_NAME']
+        blob_account_key = CONFIG_DICT['BLOB_ACCOUNT_KEY']
+        blob_host = CONFIG_DICT['BLOB_HOST']
+
+        block_blob_service = BlockBlobService(account_name=blob_account_name,
+                                              account_key=blob_account_key,
+                                              endpoint_suffix=blob_host)
+
+        now_beijing_time = datetime.now(tz=pytz.timezone('Asia/Shanghai'))
+        expiry = now_beijing_time + timedelta(seconds=expiry_in_seconds)
+
+        token = block_blob_service.generate_blob_shared_access_signature(container_name=container_name,
+                                                                         blob_name=file_name,
+                                                                         permission=BlobPermissions.READ,
+                                                                         expiry=expiry)
+        base_url = f"https://{blob_host}/{container_name}/{file_name}"
+        file_access_url = f'{base_url}?{token}'
+
+        return file_access_url
